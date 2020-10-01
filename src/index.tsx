@@ -19,7 +19,7 @@ import { onError } from '@apollo/link-error';
 import { GraphQLError } from 'graphql';
 
 const uri = 'https://guided-gelding-12.hasura.app/v1/graphql';
-const ws = 'ws://guided-gelding-12.hasura.app/v1/graphql';
+const ws = 'wss://guided-gelding-12.hasura.app/v1/graphql';
 
 
 export const errorLink = onError(({ graphQLErrors, networkError }) => {

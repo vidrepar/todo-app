@@ -1,0 +1,9 @@
+#mutation createTodo($object: todos_insert_input!) {
+mutation createTodo($title: String! $description: String! $group_id: uuid!) {
+    insert_todos_one(object: { title: $title description: $description group_id: $group_id}) {
+        id
+        title
+        created_at
+        done
+    }
+}

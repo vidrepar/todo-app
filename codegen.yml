@@ -1,0 +1,25 @@
+overwrite: true
+schema:
+  - "https://guided-gelding-12.hasura.app/v1/graphql":
+      headers:
+          x-hasura-admin-secret: "vidrepar"
+documents: "src/**/*.graphql"
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      reactApolloVersion: 3
+      withHOC: false
+      withComponent: false
+      withHooks: true
+      withMutationFn: true
+      declarationKind:
+        type: 'interface'
+        input: 'interface'
+      preResolveTypes: true
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

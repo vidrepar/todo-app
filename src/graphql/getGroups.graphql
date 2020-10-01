@@ -1,0 +1,12 @@
+subscription getGroups {
+    groups {
+        __typename
+        name
+        id
+        todos_aggregate {
+            aggregate {
+                count
+            }
+        }
+    }
+}

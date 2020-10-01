@@ -1,0 +1,15 @@
+subscription getTodos($group_id: uuid!) {
+    todos(where: {created_at: {_gte: "2020-09-29T00:00:00+00:00"}, group_id: {_eq: $group_id}}, order_by: {created_at: desc}) {
+        __typename
+        id
+        title
+        created_at
+        group {
+            group_users {
+                user {
+                    email
+                }
+            }
+        }
+    }
+}
